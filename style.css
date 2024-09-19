@@ -1,0 +1,90 @@
+body{
+    background-image: url(Images/pc1.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.wrapper{
+    position: relative;
+    margin-top: 230px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height:250px;
+    text-align: center;
+    border: 1px solid rgb(241, 241, 241);
+    border-radius: 12px ;
+    padding: 10px 20px;
+    background: transparent;
+    background-color: rgba(0,0,0,0.05);
+    backdrop-filter: blur(3px);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.wrapper h2 {
+    font-size: 30px;
+    color: black;
+}
+.wrapper p{
+    margin: 10px 10px;
+    font-size: 18px;
+    color: black;
+}
+
+.input-field{
+    position: relative;
+}
+
+.input-field input{
+    border-radius: 10px;
+    background: transparent;
+    margin: 15px;
+    border: 2px solid rgb(255, 255, 255);
+    width: 280px;
+    height: 2px;
+    padding: 20px 20px 20px 20px;
+    backdrop-filter: blur(15px);
+    font-size: 16px;
+}
+
+.input-field i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    color: white;
+}
+.input::placeholder {
+    color: rgb(252, 252, 252);
+}
+
+.input-field input[type="text"]:focus::placeholder {
+    transform: translateY(-100%);
+    transition: transform 0.2s ease-in-out;
+    font-size: 10px;
+
+}
+
+.input-field input[type="text"]:not(:focus)::placeholder{
+    transform: translateY(0%);
+    transition: transform 0.2s ease-in-out;
+    font-size: 16px;
+}
+button{
+    padding: 0px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid rgb(241, 241, 241);
+    background: transparent;
+    backdrop-filter: blur(6px);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    text-align: center;
+}
+
+button:hover{
+    background-color: #6969f5;
+}
