@@ -92,7 +92,7 @@
                 const data = await response.json();
 
                 if (data.status === 200){
-                    if (data.data.result == "approved"){
+                    if (data.data.result === "approved"){
                         resultTable.style.display = 'table';
                         tbody.innerHTML = `
                             <tr>
