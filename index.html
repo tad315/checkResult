@@ -99,60 +99,7 @@
 
 </div>
 
-<script>
-    async function fetchResult() {
-        const studentCode = document.getElementById('id-sv').value;
-        const  wrapper = document.querySelector('.wrapper');
-        const resultPage = document.getElementById('result-page');
-        const resultMessage = document.getElementById('result-message');
-        const resultTable = document.getElementById('result-table');
-        const tbody = resultTable.querySelector('tbody');
-
-        resultMessage.innerHTML = '';
-        tbody.innerHTML ='';
-        resultTable.style.display = 'none';
-
-        try{
-            const response = await fetch(`https://lcdkhoacntt1-ptit.tech/api/ctv-2024/result/${studentCode}`);
-            const data = await response.json();
-
-            if (data.status === 200){
-                if (data.data.result === "approved"){
-                    resultTable.style.display = 'table';
-                    tbody.innerHTML = `
-                            <tr>
-                                <td>${data.data.studentCode}</td>
-                                <td>${data.data.fullname}</td>
-                                <td>${data.data.className}</td>
-                                <td>${data.data.major}</td>
-                                <td>${data.data.result}</td>
-                                <td>${data.data.interviewTime}</td>
-                            </tr>
-                        `;
-                }
-            }
-            else{
-                resultMessage.innerHTML =`Mã sinh viên: ${studentCode}<br> Rất tiếc! Bạn không vượt qua Vòng CV.<br>Hẹn gặp lại bạn vào đợt tuyển CTV năm tới nhé!`;
-                resultTable.style.display ='none';
-            }
-            wrapper.style.display ='none';
-            resultPage.style.display= 'block';
-        }
-        catch(error){
-            resultMessage.innerHTML ='Có lỗi xảy ra! Vui lòng thử lại';
-            console.error('Error fetching data:', error);
-        }
-    }
-    function toggleEmail(emailId) {
-        const emailElement = document.getElementById(emailId);
-        emailElement.style.display = emailElement.style.display === 'none' ? 'inline' : 'none';
-    }
-
-    function togglePhone(hotlineId) {
-        const hotlineElement = document.getElementById(hotlineId);
-        hotlineElement.style.display = hotlineElement.style.display === 'none' ? 'inline' : 'none';
-    }
-</script>
+<script src="script.js"></script>
 </body>
 
 </html>
